@@ -1,13 +1,108 @@
 <!DOCTYPE html>
 <html class="page" lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <title>Название проекта</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/index.js" defer></script>
-  </head>
-  <body class="page__body">
-    <header class="header">Шапка</header>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Drink2Go. Интернет-магазин кофейных напитков</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/32.png">
+  <link rel="apple-touch-icon" href="favicons/apple-icon.png">
+  <!-- манифест добавить в имг иконки 192 и 512 пнг -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fonts/montserratRegular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/montserratBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/montserratSemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/montserratMedium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <!-- скрипты проверить куда привязаны и как -->
+  <script src="scripts/index.js" defer></script>
+</head>
+
+<body class="body no-js">
+  <div class="wrapper">
+    <header class="header header--home" data-test="header">
+      <div class="header__container container">
+        <nav class="header__nav nav">
+          <a class="nav__logo logo" href="index.html" aria-current="page">
+            <picture>
+              <source media="(min-width: 1440px)" type="image/svg+xml" srcset="images/logo-header-desktop.svg" width="170" height="36">
+              <source media="(min-width: 768px)" type="image/svg+xml" srcset="images/logo-header-tablet.svg" width="82" height="36">
+              <img src="images/logo-header-mobile.svg" width="32" height="36" alt="Логотип Drink2Go.">
+            </picture>
+          </a>
+          <h1 class="header__title">Интернет-магазин кофейных напитков</h1>
+          <button class="nav__toggle" type="button" aria-label="Открыть/закрыть меню.">
+            <span class="nav__toggle-line"></span>
+          </button>
+          <ul class="nav__list list-reset">
+            <li class="nav__item">
+              <a class="nav__link nav__link--current" href="index.html" aria-current="page">Главная</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Каталог</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Доставка</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">О нас</a>
+            </li>
+          </ul>
+
+          <ul class="nav__user list-reset">
+            <li class="user__item">
+              <a class="user__account" href="#">
+                <span class="user__title">Личный кабинет</span>
+              </a>
+            </li>
+            <li class="user__item">
+              <a class="user__basket" href="#">
+                <span class="user__title">Корзина</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main-container container">
+      <section class="hero-block" data-test="hero">
+        <h2 class="visually-hidden">Новинки нашего магазина!</h2>
+        <div class="slider-container">
+          <div class="slider">
+            <button class="slider__button slider__button--prev slider-button-prev" type="button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="#7859CF" role="img">
+                <use href="images/icons/arrow-left.svg"></use>
+              </svg>
+            </button>
+            <button class="slider__button slider__button--next slider-button-next" type="button">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="#7859CF" role="img">
+                <use href="images/icons/arrow-right.svg"></use>
+              </svg>
+            </button>
+            <div class="slider__pagination-wrapper">
+              <ul class="slider__pagination slider-pagination">
+                <li>
+                  <span class="slider__pagination-item slider__pagination-item--active"></span>
+                </li>
+                <li><span class="slider__pagination-item"></span></li>
+                <li><span class="slider__pagination-item"></span></li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+    <footer>
+
+    </footer>
+  </div>
+</body>
+
 </html>
