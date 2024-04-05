@@ -1,0 +1,24 @@
+.cards {
+  @include list;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 46px;
+
+  gap: 25px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: space-between;
+    margin-bottom: 74px;
+
+    gap: 33px 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    justify-content: space-between;
+    margin-bottom: 61px;
+
+    gap: 33px 20px;
+  }
+}

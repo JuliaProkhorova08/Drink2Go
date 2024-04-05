@@ -1,0 +1,231 @@
+.slider {
+  position: relative;
+
+  width: 320px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+  }
+}
+
+.slider__container {
+  position: relative;
+
+  width: 100%;
+
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    gap: 19px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 74px;
+    padding-left: 105px;
+
+    text-align: left;
+
+    gap: 0;
+  }
+}
+
+.slider__list-container {
+  width: 320px;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+  }
+}
+
+.slider__list {
+  @include list;
+
+  display: flex;
+
+  transform: translateX(0);
+
+  transition: $transition;
+}
+
+.slider__item {
+  display: flex;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  padding-top: 20px;
+  padding-bottom: 60px;
+
+  background-color: $bg-flat;
+
+  scroll-snap-align: center;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 47px;
+    padding-bottom: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 29px;
+  }
+}
+
+.slider__item--latte {
+  background-color: $bg-lavender;
+}
+
+.slider__item--espresso {
+  background-color: $bg-espresso;
+}
+
+.slider__button {
+  position: absolute;
+  z-index: 100;
+
+  height: 100%;
+  padding: 3px 0 0 0;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    padding: 30px;
+
+    & svg {
+      position: absolute;
+      top: 310px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 30px;
+
+    & svg {
+      position: absolute;
+      top: 347px;
+    }
+  }
+}
+
+.slider__button--left {
+  left: 0;
+
+  &:hover {
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
+
+  &:disabled {
+    background: none;
+
+    pointer-events: none;
+  }
+
+  &:disabled > svg {
+    pointer-events: none;
+
+    fill: $base-grey;
+  }
+}
+
+.slider__button--right {
+  right: 0;
+
+  &:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  }
+
+  &:active {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0) 0%, rgba(120, 89, 207, 0.25) 100%);
+  }
+
+  &:disabled {
+    background: none;
+
+    pointer-events: none;
+  }
+
+  &:disabled > svg {
+    pointer-events: none;
+
+    fill: $base-grey;
+  }
+
+  @media (min-width: $tablet-width) {
+    & svg {
+      right: 30px;
+    }
+  }
+}
+
+.slider__pagination-container {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+    left: 0;
+
+    display: block;
+  }
+}
+
+.slider__pagination {
+  @include list;
+
+  position: relative;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 8px;
+
+  & > li {
+    padding: 10px 0;
+  }
+}
+
+.slider__pagination-item {
+  display: block;
+  width: 62px;
+  height: 4px;
+
+  background-color: $base-white;
+  cursor: pointer;
+
+  transition: $transition;
+
+  &:hover {
+    background-color: $base-secondary;
+  }
+
+  &:active {
+    background-color: $base-primary;
+  }
+}
+
+.slider__pagination-item--active {
+  background-color: $base-primary;
+}

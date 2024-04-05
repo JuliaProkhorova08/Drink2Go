@@ -1,0 +1,171 @@
+.filter-price {
+  & .filters__title {
+    margin-bottom: 31px;
+
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: -2px;
+    margin-bottom: 3px;
+  }
+}
+
+.filter-price__input-container {
+  position: relative;
+
+  display: flex;
+
+  gap: 44px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 8px;
+    height: 2px;
+
+    background-color: $base-grey;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (min-width: $tablet-width) {
+    gap: 49px;
+  }
+}
+
+.filter-price__input {
+  width: 118px;
+  height: 40px;
+  padding: 8px 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: inherit;
+  text-align: center;
+
+  border: 2px solid $alt-primary-lighter;
+  border-radius: 4px;
+
+  appearance: none;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $base-grey;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $alt-primary-darker;
+    outline-offset: -2px;
+  }
+
+  &:disabled {
+    color: $base-grey;
+
+    outline: 2px solid $base-grey;
+    outline-offset: -2px;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 87px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 134px;
+  }
+}
+
+.filter-price__range {
+  width: 280px;
+  height: 2px;
+  margin-bottom: 35px;
+
+  background-color: $base-grey;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    width: 220px;
+    margin-bottom: 31px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 323px;
+    margin-bottom: 31px;
+  }
+
+  & .noUi-connect {
+    background-color: $alt-primary-lighter;
+  }
+
+  & .noUi-connects {
+    top: -2px;
+
+    height: 4px;
+  }
+
+  & .noUi-handle {
+    top: -12px;
+    right: -8px;
+
+    width: 24px;
+    height: 24px;
+
+    background-color: $base-white;
+    border: 2px solid $alt-primary-lighter;
+    border-radius: 50%;
+    cursor: grab;
+
+  }
+
+  & .noUi-handle-lower {
+    right: -24px;
+  }
+
+  & .noUi-handle-upper {
+    right: -8px;
+
+      @media (min-width: $tablet-width) {
+    right: -5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    right: -7px;
+  }
+  }
+
+  & .noUi-handle::after,
+  & .noUi-handle::before {
+    display: none;
+  }
+
+  & .noUi-handle:hover {
+    background-color: $base-secondary;
+    box-shadow: inset 0 0 0 2px $base-white;
+  }
+
+  & .noUi-handle:active {
+    background-color: $base-primary;
+    box-shadow: inset 0 0 0 2px $base-white;
+  }
+}
+
+.filter-price__range--disable {
+  pointer-events: none;
+
+  & .noUi-connect {
+    background-color: $base-grey;
+  }
+
+  & .noUi-handle {
+    background-color: $base-grey;
+    border: 2px solid $base-grey;
+    box-shadow: inset 0 0 0 2px $base-white;
+  }
+}

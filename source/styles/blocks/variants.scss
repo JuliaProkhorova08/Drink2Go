@@ -1,0 +1,105 @@
+.variants {
+  @include list;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.variants__control {
+  position: relative;
+
+  cursor: pointer;
+
+  &:hover ~ .variants__mark::before {
+    background-color: $base-secondary;
+  }
+}
+
+.variants__label {
+  padding-left: 34px;
+}
+
+.variants__input[type="radio"]:hover ~ .variants__mark::before {
+  background-color: $base-secondary;
+}
+
+.variants__input[type="radio"] {
+  & + .variants__mark {
+    position: absolute;
+    top: -3px;
+    left: 0;
+
+    width: 24px;
+    height: 24px;
+
+    background-color: #ffffff;
+    border: 2px solid $base-grey;
+    border-radius: 50%;
+  }
+
+  & + .variants__mark:hover {
+    background-color: $base-secondary;
+    border: 2px solid $base-primary;
+    box-shadow: inset 0 0 0 2px $base-white;
+  }
+
+  &:checked + .variants__mark::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 16px;
+    height: 16px;
+
+    background-color: $base-primary;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &:checked + .variants__mark {
+    border: 2px solid $base-primary;
+  }
+
+  &:focus-visible + .variants__mark {
+    border: 2px solid $base-primary;
+  }
+
+  &:disabled + .variants__mark {
+    border: 2px solid $alt-light-grey;
+
+    pointer-events: none;
+  }
+
+  &:disabled + .variants__mark::before {
+    background-color: $base-grey;
+  }
+
+  &:disabled + .variants__mark:hover {
+    background-color: $base-white;
+    border: 2px solid $alt-light-grey;
+    box-shadow: none;
+
+    pointer-events: none;
+  }
+
+  &:disabled ~ .variants__label {
+    color: $base-grey;
+  }
+}
+
+.variants__mark:hover {
+  background-color: $base-secondary;
+}
+
+.variants__input[disabled="disabled"] {
+  & + .variants__mark {
+    border: 2px solid $alt-light-grey;
+  }
+
+  & + .variants__label {
+    color: $alt-light-grey;
+  }
+}

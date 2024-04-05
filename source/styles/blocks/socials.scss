@@ -1,0 +1,37 @@
+.socials {
+  @include list;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 19px;
+}
+
+.socials__item {
+  &:hover,
+  &:hover svg {
+    fill: $base-primary;
+  }
+
+  &:active,
+  &:active svg {
+    fill: $base-primary;
+  }
+}
+
+.socials__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: $transition;
+
+  &:hover {
+    border-radius: 5px;
+    background-color: $base-secondary;
+  }
+
+  &:active {
+    border-radius: 5px;
+    background-color: $alt-primary-opacity;
+  }
+}

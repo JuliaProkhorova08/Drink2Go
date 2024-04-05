@@ -1,0 +1,12 @@
+.filter-milk {
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
+}
+
+.filter-milk__list {
+  @media (min-width: $tablet-width) {
+    width: 225px;
+  }
+}

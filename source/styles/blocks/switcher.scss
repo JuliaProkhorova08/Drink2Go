@@ -1,0 +1,92 @@
+.switcher__label {
+  position: relative;
+
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+}
+
+/* The slider */
+.switcher__slider {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+
+  background-color: #cccccc;
+  border-radius: 12px;
+  cursor: pointer;
+
+  transition: 0.4s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: $base-white;
+    border-radius: 12px;
+
+    transition: $transition;
+  }
+}
+
+.switcher__input {
+  &:checked + .switcher__slider {
+    background-color: $base-primary;
+  }
+
+  &:hover + .switcher__slider {
+    background-color: $base-secondary;
+    outline: 2px solid $alt-primary-lighter;
+  }
+
+  &:focus + .switcher__slider {
+    box-shadow: 0 0 1px $base-primary;
+  }
+
+  &:checked + .switcher__slider::before {
+    border-radius: 50%;
+    transform: translateX(18px);
+  }
+
+  &:disabled:hover + .switcher__slider {
+    background-color: $alt-light-grey;
+    outline: none;
+
+    pointer-events: none;
+  }
+
+  &:disabled + .switcher__slider {
+    background-color: $alt-light-grey;
+
+    pointer-events: none;
+  }
+
+  &:disabled ~ .switcher__text {
+    color: $base-grey;
+  }
+
+  &:checked:disabled + .switcher__slider {
+    background-color: $base-grey;
+
+    pointer-events: none;
+  }
+
+  &:checked:disabled + .switcher__slider::before {
+    background-color: $alt-light-grey;
+
+    pointer-events: none;
+  }
+}
+
+.switcher__text {
+  display: block;
+  width: max-content;
+  padding-left: 52px;
+}
